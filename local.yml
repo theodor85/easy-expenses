@@ -20,6 +20,7 @@ services:
       - ./.envs/.local/.postgres
     ports:
       - "8000:8000"
+      - "3000:3000" # for debug
     command: /start
 
   postgres:
@@ -33,3 +34,14 @@ services:
       - local_postgres_data_backups:/backups
     env_file:
       - ./.envs/.local/.postgres
+
+  vue:
+    build:
+      context: .
+      dockerfile: ./compose/local/vue/Dockerfile
+    volumes:
+      - ./vue:/app
+    depends_on:
+      - django
+    ports:
+      - 5000:8080
