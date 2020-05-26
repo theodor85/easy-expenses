@@ -1,0 +1,11 @@
+{
+    "python.pythonPath": "/home/theodor/progs/Python/projects1/envs/ee/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "restructuredtext.confPath": "",
+    
+    "files.watcherExclude": {
+        "**/node_modules/*/**": true
+    }
+
+}
